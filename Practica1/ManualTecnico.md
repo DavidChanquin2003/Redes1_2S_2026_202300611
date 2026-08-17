@@ -269,3 +269,17 @@ Formato utilizado: `[Área/Departamento]-[Número de Punto de Red]`. Los puertos
 | Dirección General | 4 (4 PCs) | **General-PR01** al **General-PR04** |
 | Departamento de Backend | 7 (6 PCs, 1 Servidor) | **Backend-PR01** al **Backend-PR07** |
 | Data Center | 3 (3 Servidores Principales) | **DataCenter-PR01** al **DataCenter-PR03** |
+
+## 14. Comparación de Etiquetado con el Estándar TIA/EIA-606
+
+Al contrastar el esquema simplificado utilizado en el diseño de QuetzalDev S.A. (`[Área]-[Número de Puerto]`) con las exigencias formales del estándar 606, destacan las siguientes diferencias concretas:
+
+1. **Nomenclatura Jerárquica vs. Nombres Descriptivos:** 
+   * En esta práctica usé identificadores basados en la función del departamento (ejemplo. `RRHH-PR01` o `MDF-Recepcion`). 
+   * El estándar TIA/EIA-606 prohíbe basar los nombres en los usuarios o departamentos, exigiendo el uso de identificadores alfanuméricos lógicos. El formato normativo identifica la ubicación física estática: edificio, piso, cuarto de telecomunicaciones, patch panel y puerto (ejemplo. `1A-B12`, que se traduce como: Piso 1, Cuarto de Telecomunicaciones A, Panel B, Puerto 12).
+2. **Codificación Formal por Colores:**
+   * En mi esquema de diseño me basé únicamente en texto impreso sobre la etiqueta para diferenciar los cables.
+   * El estándar 606 requiere obligatoriamente una codificación visual por colores en las etiquetas y terminaciones (por ejemplo, exige usar color Azul para el cableado horizontal, Blanco para el backbone de primer nivel, o Verde para conexiones de red externa/demarcación).
+
+Si dentro de dos años QuetzalDev S.A. reestructura su edificio y el "Departamento de Recursos Humanos" se muda a otra oficina, todas las etiquetas del cableado que dicen `RRHH-PR...` quedarían obsoletas e incorrectas. Esto causaría una severa confusión técnica. Al aplicar el estándar 606 (`1A-B12`), el puerto mantiene su identidad ligada a la infraestructura arquitectónica inmutable, independientemente de qué departamento se siente en esos escritorios. 
+

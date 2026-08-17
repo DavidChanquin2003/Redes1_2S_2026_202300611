@@ -197,3 +197,12 @@ Cada departamento cuenta con un switch de acceso de 8 o 16 puertos, y tres área
 *   **Consumo máximo estimado por IDF:** 1 Switch de acceso (aprox 30W) + 1 Servidor (aprox 400W) = 430 Watts.
 *   **Cálculo:** VA = 430/0.8 = 537.5 VA
 *   **Capacidad Recomendada:** Se propone instalar 1 UPS de 1000VA a 1500VA para cada gabinete departamental. Esta capacidad soporta de forma sobrada el consumo eléctrico del equipo activo de cada departamento y provee la autonomía necesaria para mantener la conexión de red y resguardar la información en caso de emergencia eléctrica.
+
+## 11. Especificación de Conexiones (Straight-Through y Crossover)
+
+A continuación defino el tipo de armado para los cables de par trenzado (cobre) en la infraestructura de la red, de acuerdo con la naturaleza de los dispositivos en cada extremo de la conexión.
+
+| Segmento / Enlace | Dispositivos a Conectar | Formato de Cable | Justificación Técnica |
+| :--- | :--- | :--- | :--- |
+| **Cableado Horizontal** | PC / Laptop / Servidor, Switch de Acceso | **Directo (Straight-Through)** | Se utiliza específicamente para conectar dispositivos diferentes, como una compu de escritorio a un switch. En este cable, la secuencia de los pines se mantiene igual en ambos extremos (el pin 1 va con el pin 1, el 2 con el 2, etc.), permitiendo que la transmisión de un equipo llegue correctamente a la recepción del otro. |
+| **Cableado Troncal** *(Si se utilizara UTP en lugar de Fibra)* | Switch Departamental, Switch Principal (MDF) | **Cruzado (Crossover)** | Se utiliza de manera estricta para conectar dispositivos iguales, como dos switches entre sí, sin intermediarios. Los pines se cruzan intencionalmente (el pin 1 en un extremo se conecta al pin 3 del otro, y viceversa), lo que permite que los pares de transmisión y recepción de equipos idénticos puedan "hablarse" directamente. |

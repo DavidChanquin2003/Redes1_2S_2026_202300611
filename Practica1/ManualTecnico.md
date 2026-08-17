@@ -283,3 +283,13 @@ Al contrastar el esquema simplificado utilizado en el diseño de QuetzalDev S.A.
 
 Si dentro de dos años QuetzalDev S.A. reestructura su edificio y el "Departamento de Recursos Humanos" se muda a otra oficina, todas las etiquetas del cableado que dicen `RRHH-PR...` quedarían obsoletas e incorrectas. Esto causaría una severa confusión técnica. Al aplicar el estándar 606 (`1A-B12`), el puerto mantiene su identidad ligada a la infraestructura arquitectónica inmutable, independientemente de qué departamento se siente en esos escritorios. 
 
+## 15. Flujo de Conexión End-to-End 
+
+A continuación se describe el recorrido físico completo de la señal de red desde un dispositivo final (ejemplo. una computadora en el Departamento de Recursos Humanos) hasta un recurso central (ejemplo. Servidor Principal en el Data Center).
+
+1. **Área de Trabajo:** El flujo inicia en la tarjeta de red de la PC del usuario. La señal viaja a través de un patch cord (cable UTP directo) desde la computadora hasta la toma de red ubicada en la pared o escritorio.
+2. **Cableado Horizontal:** Desde la parte posterior de la roseta, la señal viaja por el cable UTP Categoría 6, recorriendo la canaleta cerrada de la oficina hasta llegar al gabinete de pared del departamento.
+3. **Parcheo Departamental:** El cable horizontal termina (se poncha) en la parte trasera del Patch Panel de 16 puertos del departamento. Desde el frente del Patch Panel, un patch cord corto conecta ese puerto físico al Switch de Acceso Departamental.
+4. **Cableado Troncal (Uplink):** El Switch Departamental procesa la señal y la envía a través de su puerto de uplink por medio del cableado troncal de Fibra Óptica Multimodo. La luz viaja por la escalerilla metálica abierta a lo largo del pasillo central del edificio.
+5. **Recepción en el MDF:** La fibra óptica llega al Data Center y termina en el Distribuidor de Fibra  dentro del rack de piso de 42U. 
+6. **Destino Final:** Un patch cord de fibra (jumper) conecta el ODF hacia un puerto del Switch Principal de 24 puertos. Finalmente, este switch central envía los datos a través de un último cable UTP hacia el Servidor Principal solicitado por el usuario.

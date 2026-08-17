@@ -142,3 +142,14 @@ Para el correcto flujo de los datos y el soporte de la topología en estrella di
 ### 6.3 Servidores
 *   **Justificación:** Actúan como los proveedores de recursos, aplicaciones y almacenamiento dentro de la red. 
 *   **Distribución:** Se alojan 3 servidores en el Data Center por seguridad y control climático. Los 3 servidores distribuidos (en Recepción, Diseño e Innovación, y Backend) se justifican operativamente para reducir la latencia en tareas específicas de esos equipos (por ejemplo, servidores locales para Laboratorios de Pruebas QA en Diseño, o control de repositorios en Backend).
+
+## 7. Justificación del Medio de Transmisión (Cableado Troncal)
+
+Para la interconexión entre el Cuarto de Telecomunicaciones (MDF) y los switches de distribución ubicados en cada departamento (cableado troncal), se ha seleccionado Fibra Óptica Multimodo.
+
+La elección de este medio de transmisión se fundamenta en los siguientes aspectos técnicos y operativos:
+
+*   **Capacidad y Velocidad de Uplink:** Tal como establecen los fundamentos de cableado estructurado, la fibra óptica es el medio más apropiado para el cableado troncal debido a la altísima capacidad y velocidad de transmisión que ofrece. Al utilizar fibra multimodo, se garantiza un canal de ancho de banda masivo para los enlaces de subida. Esto previene cuellos de botella cuando el tráfico concurrente de los 7 departamentos y los servidores viaje simultáneamente hacia el switch principal en el Data Center.
+*   **Inmunidad a Interferencias:** El cableado troncal recorrerá la canalización principal a través del Hall Central, un área donde típicamente coexiste el cableado de iluminación y energía eléctrica del edificio. A diferencia del cobre, la fibra óptica transmite pulsos de luz, haciéndola completamente inmune a la Interferencia Electromagnética y garantizando la pureza de la señal a lo largo de toda la ruta.
+*   **Escalabilidad a Futuro y Costo-Beneficio:** Aunque la inversión inicial en fibra y transceptores ópticos es ligeramente superior a la del cable UTP, su vida útil y escalabilidad justifican el costo. Si en un futuro QuetzalDev S.A. demanda velocidades superiores en su columna vertebral (como migrar a 10 Gbps o superior), la infraestructura de fibra multimodo ya estará lista para soportarlo sin necesidad de invertir en recablear el edificio; únicamente se actualizarán los módulos ópticos en los switches.
+*   **Distancia:** Aunque las distancias hacia cada departamento son menores a los 30 metros (debido a que el edificio tiene 26 metros de longitud total) y el cobre podría soportar el alcance, la prioridad en el troncal no es solo llegar, sino garantizar la máxima tasa de transferencia y latencia mínima entre el MDF y los Deptos.

@@ -153,3 +153,17 @@ La elección de este medio de transmisión se fundamenta en los siguientes aspec
 *   **Inmunidad a Interferencias:** El cableado troncal recorrerá la canalización principal a través del Hall Central, un área donde típicamente coexiste el cableado de iluminación y energía eléctrica del edificio. A diferencia del cobre, la fibra óptica transmite pulsos de luz, haciéndola completamente inmune a la Interferencia Electromagnética y garantizando la pureza de la señal a lo largo de toda la ruta.
 *   **Escalabilidad a Futuro y Costo-Beneficio:** Aunque la inversión inicial en fibra y transceptores ópticos es ligeramente superior a la del cable UTP, su vida útil y escalabilidad justifican el costo. Si en un futuro QuetzalDev S.A. demanda velocidades superiores en su columna vertebral (como migrar a 10 Gbps o superior), la infraestructura de fibra multimodo ya estará lista para soportarlo sin necesidad de invertir en recablear el edificio; únicamente se actualizarán los módulos ópticos en los switches.
 *   **Distancia:** Aunque las distancias hacia cada departamento son menores a los 30 metros (debido a que el edificio tiene 26 metros de longitud total) y el cobre podría soportar el alcance, la prioridad en el troncal no es solo llegar, sino garantizar la máxima tasa de transferencia y latencia mínima entre el MDF y los Deptos.
+
+## 8. Justificación de la Ruta de Canalización
+
+Para el enrutamiento seguro, ordenado y escalable de los cables a través del edificio de QuetzalDev S.A, se implementará un sistema de canalización estructurado basándose en los lineamientos del estándar **ANSI/TIA/EIA-569** (Estándar para Ductos y Espacios de Telecomunicaciones en Edificios Comerciales).
+
+### 8.1 Canalización Principal (Cableado Troncal)
+*   **Selección:** Escalerilla metálica abierta (Bandeja portacables tipo escalera).
+*   **Ruta:** Suspendida en el techo a lo largo de los 26 metros del Hall Central, iniciando desde el Data Center y ramificándose hacia cada cuarto.
+*   **Justificación:** Se optó por una escalerilla metálica abierta debido a su excelente accesibilidad y capacidad de crecimiento. Este medio permite que el personal técnico pueda agregar, retirar o inspeccionar visualmente los enlaces de fibra óptica del backbone sin necesidad de desarmar tapas o ductos cerrados. Además, su diseño abierto proporciona una ventilación pasiva óptima y soporta estructuralmente el peso de las troncales que alimentan a los 7 departamentos.
+
+### 8.2 Canalización Secundaria (Cableado Horizontal)
+*   **Selección:** Canaleta plástica cerrada de superficie (Ducto de pared).
+*   **Ruta:** Desde el gabinete de telecomunicaciones interno de cada departamento hacia las salidas de información (rosetas) agrupadas en los escritorios.
+*   **Justificación:** Dentro del área de trabajo de oficinas como Legal, Dirección General o Recursos Humanos, la estética y la protección física de los enlaces son prioridades. La canaleta cerrada resguarda los cables de cobre UTP Categoría 6 contra dobleces excesivos, tirones o impactos accidentales causados por el personal. Esto asegura que el tramo final del cableado mantenga su integridad hasta llegar a las tomas de red unitarias o dobles de cada usuario.

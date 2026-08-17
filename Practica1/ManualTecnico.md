@@ -205,4 +205,36 @@ A continuación defino el tipo de armado para los cables de par trenzado (cobre)
 | Segmento / Enlace | Dispositivos a Conectar | Formato de Cable | Justificación Técnica |
 | :--- | :--- | :--- | :--- |
 | **Cableado Horizontal** | PC / Laptop / Servidor, Switch de Acceso | **Directo (Straight-Through)** | Se utiliza específicamente para conectar dispositivos diferentes, como una compu de escritorio a un switch. En este cable, la secuencia de los pines se mantiene igual en ambos extremos (el pin 1 va con el pin 1, el 2 con el 2, etc.), permitiendo que la transmisión de un equipo llegue correctamente a la recepción del otro. |
-| **Cableado Troncal** *(Si se utilizara UTP en lugar de Fibra)* | Switch Departamental, Switch Principal (MDF) | **Cruzado (Crossover)** | Se utiliza de manera estricta para conectar dispositivos iguales, como dos switches entre sí, sin intermediarios. Los pines se cruzan intencionalmente (el pin 1 en un extremo se conecta al pin 3 del otro, y viceversa), lo que permite que los pares de transmisión y recepción de equipos idénticos puedan "hablarse" directamente. |
+| **Cableado Troncal** *(Si se utilizara UTP en lugar de Fibra)* | Switch Departamental, Switch Principal (MDF) | **Cruzado (Crossover)** | Se utiliza de manera estricta para conectar dispositivos iguales, como dos switches entre sí, sin intermediarios. Los pines se cruzan intencionalmente (el pin 1 en un extremo se conecta al pin 3 del otro, y viceversa), lo que permite que los pares de transmisión y recepción de equipos idénticos puedan "hablarse" directamente. 
+
+## 12. Documentación de Disposición de Pines
+
+Como evidencia de la aplicación de estándares internacionales para la infraestructura de Capa 1, se detalla el orden de colores (pines 1 al 8) a utilizar en el ponchado de los conectores RJ45, basándose en la norma ANSI/TIA/EIA-568-A y TIA/EIA-568-B.
+
+### 12.1 Cable Directo (Straight-Through)
+Para la conexión entre dispositivos diferentes (Cableado Horizontal: PC a Switch), se aplica el mismo estándar en ambos extremos del cable. En este proyecto se estandarizará el uso de T568B en ambos lados.
+
+| Pin | Extremo 1 (Estándar T568B) | Extremo 2 (Estándar T568B) |
+| :---: | :--- | :--- |
+| **1** | Blanco / Naranja | Blanco / Naranja |
+| **2** | Naranja | Naranja |
+| **3** | Blanco / Verde | Blanco / Verde |
+| **4** | Azul | Azul |
+| **5** | Blanco / Azul | Blanco / Azul |
+| **6** | Verde | Verde |
+| **7** | Blanco / Café | Blanco / Café |
+| **8** | Café | Café |
+
+### 12.2 Cable Cruzado (Crossover)
+Para la conexión de dispositivos iguales (de Switch a Switch), se utiliza un estándar diferente en cada extremo para cruzar los pares de transmisión y recepción. Se utilizará T568A en un extremo y T568B en el otro.
+
+| Pin | Extremo 1 (Estándar T568A) | Extremo 2 (Estándar T568B) |
+| :---: | :--- | :--- |
+| **1** | Blanco / Verde | Blanco / Naranja |
+| **2** | Verde | Naranja |
+| **3** | Blanco / Naranja | Blanco / Verde |
+| **4** | Azul | Azul |
+| **5** | Blanco / Azul | Blanco / Azul |
+| **6** | Naranja | Verde |
+| **7** | Blanco / Café | Blanco / Café |
+| **8** | Café | Café |

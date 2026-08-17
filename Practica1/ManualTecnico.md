@@ -238,3 +238,34 @@ Para la conexión de dispositivos iguales (de Switch a Switch), se utiliza un es
 | **6** | Naranja | Verde |
 | **7** | Blanco / Café | Blanco / Café |
 | **8** | Café | Café |
+
+## 13. Tabla de Etiquetado de Cables
+
+Para mantener una correcta administración física de la red y facilitar futuras tareas de mantenimiento o troubleshooting, se ha aplicado una nomenclatura estándar de etiquetado para todos los cables de la topología.
+
+### 13.1 Cableado Troncal (MDF a IDFs)
+Formato utilizado: `MDF-[Área/Departamento]`.
+
+| Enlace Origen (MDF) | Enlace Destino (Switch Departamental) | Etiqueta Asignada |
+| :--- | :--- | :--- |
+| Switch Core (Data Center) | Switch Recepción | **MDF-Recepcion** |
+| Switch Core (Data Center) | Switch Recursos Humanos | **MDF-RRHH** |
+| Switch Core (Data Center) | Switch Legal | **MDF-Legal** |
+| Switch Core (Data Center) | Switch Sala de Capacitación | **MDF-Capacitacion** |
+| Switch Core (Data Center) | Switch Diseño e Innovación | **MDF-DeI** |
+| Switch Core (Data Center) | Switch Dirección General | **MDF-General** |
+| Switch Core (Data Center) | Switch Backend | **MDF-Backend** |
+
+### 13.2 Cableado Horizontal (IDFs a Hosts)
+Formato utilizado: `[Área/Departamento]-[Número de Punto de Red]`. Los puertos se numeran de forma correlativa dentro de cada departamento (reiniciando el contador por área).
+
+| Área / Departamento | Cantidad de Cables | Rango de Etiquetas Asignadas |
+| :--- | :---: | :--- |
+| Recepción | 4 (3 PCs, 1 Servidor) | **Recepcion-PR01** al **Recepcion-PR04** |
+| Recursos Humanos | 8 (8 PCs) | **RRHH-PR01** al **RRHH-PR08** |
+| Departamento Legal | 4 (4 PCs) | **Legal-PR01** al **Legal-PR04** |
+| Sala de Capacitación | 10 (10 PCs) | **Capacitacion-PR01** al **Capacitacion-PR10** |
+| Diseño e Innovación | 8 (7 PCs, 1 Servidor) | **DeI-PR01** al **DeI-PR08** |
+| Dirección General | 4 (4 PCs) | **General-PR01** al **General-PR04** |
+| Departamento de Backend | 7 (6 PCs, 1 Servidor) | **Backend-PR01** al **Backend-PR07** |
+| Data Center | 3 (3 Servidores Principales) | **DataCenter-PR01** al **DataCenter-PR03** |

@@ -177,3 +177,23 @@ Esta decisión se basa en base a los siguientes puntos clave:
 *   **Capacidad y Carga Estructural:** El MDF es el núcleo de la red. Un rack de piso ofrece el espacio vertical y la resistencia estructural necesarios para alojar de forma segura el Switch Principal, el Patch Panel central, la bandeja de fibra óptica y los 3 servidores principales asignados a esta área.
 *   **Soporte para Respaldo de Energía:** Los equipos de respaldo (UPS) con capacidad suficiente para sostener la infraestructura central (estimados entre 3000VA y 5000VA) son equipos de gran volumen y peso. Un gabinete de piso es indispensable para soportar esta carga de manera segura en su base inferior.
 *   **Seguridad Física y Organización:** Al tratarse de un gabinete cerrado, se añade una capa de seguridad física mediante cerraduras (control de acceso físico). Además, su altura permite una gestión óptima mediante ordenadores de cables verticales, manejando adecuadamente el volumen de enlaces troncales que convergen desde todo el edificio corporativo.
+
+## 10. Estimación de Consumo Eléctrico y Capacidad de UPS
+
+Para garantizar la continuidad operativa de la red ante cortes de energia, se dimensionó el respaldo de energía (UPS) basándose en el consumo eléctrico estimado del equipo activo (switches departamentales y central), así como de los servidores locales. 
+
+Para el cálculo de la capacidad en Voltiamperios (VA), se asume un Factor de Potencia (FP) estándar en equipos informáticos de 0.8 utilizando la siguiente ecuación: 
+
+VA = Watts/0.8
+
+### 10.1 Consumo en el Data Center (MDF)
+El Cuarto de Telecomunicaciones (MDF) centraliza el equipo de mayor carga de la red corporativa.
+*   **Consumo estimado:** 1 Switch Principal de 24 puertos (aprox 50W) + 3 Servidores Principales (aprox 400W c/u) = 1250 Watts.
+*   Cálculo: VA = 1250/0.8 = 1562.5 VA
+*   **Capacidad Recomendada:** Se propone instalar 1 UPS Rackeable de 3000VA. Esta capacidad teorica cubre la carga actual del switch central y los servidores, dejando un amplio margen de seguridad (superior al 50%) para conectar futuras expansiones, sistemas de enfriamiento o monitores del rack.
+
+### 10.2 Consumo en los Departamentos
+Cada departamento cuenta con un switch de acceso de 8 o 16 puertos, y tres áreas específicas (Recepción, Diseño e Innovación, y Backend) incluyen un servidor local.
+*   **Consumo máximo estimado por IDF:** 1 Switch de acceso (aprox 30W) + 1 Servidor (aprox 400W) = 430 Watts.
+*   **Cálculo:** VA = 430/0.8 = 537.5 VA
+*   **Capacidad Recomendada:** Se propone instalar 1 UPS de 1000VA a 1500VA para cada gabinete departamental. Esta capacidad soporta de forma sobrada el consumo eléctrico del equipo activo de cada departamento y provee la autonomía necesaria para mantener la conexión de red y resguardar la información en caso de emergencia eléctrica.

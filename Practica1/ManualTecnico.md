@@ -293,3 +293,27 @@ A continuación se describe el recorrido físico completo de la señal de red de
 4. **Cableado Troncal (Uplink):** El Switch Departamental procesa la señal y la envía a través de su puerto de uplink por medio del cableado troncal de Fibra Óptica Multimodo. La luz viaja por la escalerilla metálica abierta a lo largo del pasillo central del edificio.
 5. **Recepción en el MDF:** La fibra óptica llega al Data Center y termina en el Distribuidor de Fibra  dentro del rack de piso de 42U. 
 6. **Destino Final:** Un patch cord de fibra (jumper) conecta el ODF hacia un puerto del Switch Principal de 24 puertos. Finalmente, este switch central envía los datos a través de un último cable UTP hacia el Servidor Principal solicitado por el usuario.
+
+## 16. Presupuesto Estimado de Equipo y Materiales
+
+El siguiente presupuesto detalla la estimación de costos para la implementación de la infraestructura física del edificio QuetzalDev S.A. Los precios son aproximados de mercado e incluyen el equipo activo, pasivo, de respaldo y los medios de transmisión.
+
+| Ítem | Descripción | Cantidad | Precio Unitario Estimado (Q) | Subtotal Estimado (Q) |
+| :--- | :--- | :---: | :---: | :---: |
+| **1** | Switch Principal (Core) 24 puertos Gigabit | 1 | Q 815.00 | Q 815.00 |
+| **2** | Switch de Acceso 16 puertos Gigabit | 4 | Q 460.00 | Q 1,840.00 |
+| **3** | Switch de Acceso 8 puertos Gigabit | 3 | Q 170.00 | Q 510.00 |
+| **4** | Rack de Piso Cerrado 42U (MDF) | 1 | Q 4,500.00 | Q 4,500.00 |
+| **5** | Gabinete de Pared 6U/9U (IDFs) | 7 | Q 1,100.00 | Q 7,700.00 |
+| **6** | Patch Panel 24 puertos Cat 6 | 1 | Q 450.00 | Q 450.00 |
+| **7** | Patch Panel 16 puertos Cat 6 | 4 | Q 350.00 | Q 1,400.00 |
+| **8** | Patch Panel 8 puertos Cat 6 | 3 | Q 250.00 | Q 750.00 |
+| **9** | Bobina Cable UTP Cat 6 (305m) | 2 | Q 1,300.00 | Q 2,600.00 |
+| **10** | Lote de Fibra Óptica Multimodo y Transceptores | 1 | Q 4,000.00 | Q 4,000.00 |
+| **11** | Tomas de red (Jacks, Faceplates simples/dobles) | 32 | Q 60.00 | Q 1,920.00 |
+| **12** | Material de Canalización (Escalerilla y Canaletas) | 1 | Q 3,500.00 | Q 3,500.00 |
+| **13** | UPS Principal Rackeable (3000VA - 5000VA) | 1 | Q 5,000.00 | Q 5,000.00 |
+| **14** | UPS Secundario Rackeable (1000VA - 1500VA) | 7 | Q 1,200.00 | Q 8,400.00 |
+| | **TOTAL ESTIMADO (Materiales y Equipo)** | | | **Q 43,385.00** |
+
+Nota: Este presupuesto contempla únicamente el hardware (materiales y equipo de red). No incluye los dispositivos finales (PCs, Laptops, Servidores) ni los costos de mano de obra por instalación, configuración o certificación de los nodos de red.

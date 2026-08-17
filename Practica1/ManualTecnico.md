@@ -90,3 +90,36 @@ La selección de los medios de transmisión físicos se ha realizado tomando en 
 | :--- | :--- | :--- |
 | **Cableado Troncal** (Backbone / Enlaces MDF a Switches de Depto.) | **Fibra Óptica Multimodo** | Según los principios de cableado estructurado, la fibra óptica es el medio más apropiado para el backbone debido a su alta capacidad y velocidad de uplink. Garantiza que el tráfico sumado de las 48 computadoras/servidores no genere un cuello de botella al comunicarse con el Data Center principal. |
 | **Cableado Horizontal** (Switches de Depto. a Dispositivos Finales) | **Cobre UTP - Categoría 6** | Las distancias desde los switches departamentales hasta las áreas de trabajo son considerablemente cortas (menores a 30 metros), cumpliendo holgadamente el estándar de 100 metros máximos. El cable UTP Cat 6 es ideal ya que soporta velocidades de 1 Gbps (1000BASE-T) a 250 MHz, ofreciendo el ancho de banda necesario para las tareas de desarrollo, QA y diseño de la empresa a un costo equilibrado. |
+
+## 5. Estimación de Distancias y Cálculo de Bobinas (Cableado Horizontal)
+
+Dado que la topología física establece un switch de acceso dentro de cada departamento, el cableado horizontal se confina al perímetro interno de cada oficina, reduciendo drásticamente las distancias. Se han tomado en cuenta las medidas arquitectónicas internas de los cuartos (ej. 10m x 5m, 8m x 6m), añadiendo longitud para los descensos verticales desde el techo o canaleta hacia las rosetas y el margen de ordenamiento en los gabinetes.
+
+### 5.1 Distancias Estimadas por Segmento
+
+| Departamento | Puntos de Red (Hosts) | Distancia Promedio Estimada (por enlace) | Subtotal de Cable |
+| :--- | :---: | :---: | :---: |
+| Departamento de Recepción | 4 | 10 metros | 40 metros |
+| Recursos Humanos | 8 | 8 metros | 64 metros |
+| Departamento Legal | 4 | 8 metros | 32 metros |
+| Sala de Capacitación | 10 | 9 metros | 90 metros |
+| Diseño e Innovación | 8 | 9 metros | 72 metros |
+| Dirección General | 4 | 8 metros | 32 metros |
+| Departamento de Backend | 7 | 9 metros | 63 metros |
+| Data Center | 3 | 5 metros | 15 metros |
+| **Total Neto Estimado** | **48 enlaces** | | **408 metros** |
+
+Nota: La estimación incluye tanto computadoras de escritorio y laptops, como los servidores ubicados en los distintos departamentos.
+
+### 5.2 Cálculo de Bobinas (Cable UTP Cat 6)
+
+Para determinar la adquisición de materiales, se añade un 15% adicional al metraje neto en concepto de holgura (curvas de canalización, terminación en patch panels, ponchado de rosetas y perdidas).
+
+*   **Cableado Neto Estimado:** 408 metros.
+*   **Margen de Holgura (15%):** 61.2 metros.
+*   **Total de Cable Horizontal Requerido:** 469.2 metros.
+
+Con base en la normativa comercial y los requerimientos del proyecto, se utilizan bobinas estándar de cable UTP que contienen 305 metros.
+*   Cálculo: 469.2 m / 305 m = 1.53 bobinas.
+
+**Conclusión de Material:** Se requiere presupuestar y adquirir 2 bobinas de cable UTP Categoría 6 (305 metros c/u) para satisfacer holgadamente la demanda de cableado horizontal del edificio.

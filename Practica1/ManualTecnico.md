@@ -62,3 +62,31 @@ Para garantizar la continuidad operativa de los equipos de telecomunicaciones.
 | :--- | :--- | :--- | :---: |
 | Data Center (MDF) | UPS Principal (Rackeable) | 3000VA - 5000VA | 1 |
 | Departamentos (IDFs)| UPS Secundario (Rackeable)| 1000VA - 1500VA | 7 |
+
+## 2. Justificación de la Ubicación del Cuarto de Telecomunicaciones (MDF)
+
+El Cuarto de Telecomunicaciones Principal (MDF) ha sido ubicado en la sala del Data Center (esquina inferior derecha del plano), fundamentando esta decisión en los siguientes criterios:
+
+*   **Optimización del Espacio Físico:** Con dimensiones de 12m x 5m, el Data Center es el área más amplia del edificio. Esto proporciona el espacio necesario para albergar el rack de piso principal, paneles de parcheo, conmutadores troncales y sistemas de respaldo de energía (UPS) pesados, cumpliendo con los requerimientos de espacios de telecomunicaciones del estándar ANSI/TIA/EIA-569.
+*   **Cumplimiento de Distancias Normativas (Estándar 568):** Aunque el MDF no se encuentra en el centro geométrico de la planta, la longitud total del edificio es de 26 metros. Esto garantiza que la ruta del cableado troncal más larga (hacia el Departamento de Recepción en el extremo opuesto) rondará los 30 a 35 metros aproximadamente. Esta medida está holgadamente por debajo del límite de 100 metros establecido por el estándar ANSI/TIA/EIA-568 para atenuación de señal.
+*   **Centralización de Recursos Críticos:** La sala del Data Center tiene asignados 3 servidores principales de la empresa. Instalar el MDF en esta misma habitación permite que la conexión entre el Switch Principal y dichos servidores sea directa, confinando el tráfico de datos más pesado dentro del mismo cuarto y reduciendo la latencia.
+*   **Aislamiento y Acondicionamiento:** Al integrar el equipo principal de red dentro del Data Center de QuetzalDev S.A, se aprovechan las condiciones de seguridad física, control de acceso y probable climatización dedicada que requiere esta sala por naturaleza, evitando invadir o saturar los espacios de trabajo administrativos.
+
+## 3. Justificación de la Topología Física por Departamento
+
+Para la distribución del cableado horizontal dentro de los 7 departamentos y el Data Center, se ha seleccionado y diseñado una Topología Física en Estrella. En este diseño, cada nodo (PC, laptop o servidor) se conecta de forma directa e independiente al switch de acceso instalado en su respectiva área.
+
+La elección de esta topología se fundamenta en los siguientes criterios:
+
+*   **Tolerancia a fallos y criticidad:** Al conectar cada dispositivo de manera individual hacia el switch local, se aísla el dominio de fallos. Si un cable de red (horizontal) se daña, sufre interferencias o se desconecta, únicamente ese equipo específico perderá conectividad. El resto del departamento podrá seguir operando con normalidad, lo cual asegura la continuidad del negocio.
+*   **Escalabilidad controlada:** La topología en estrella facilita enormemente el crecimiento de la red. Si QuetzalDev S.A. quiere incorporar nuevo personal en la Sala de Capacitación o añadir estaciones en Diseño e Innovación, bastará con habilitar un puerto libre en el patch panel/switch departamental y tender un nuevo enlace hacia la toma de red, sin necesidad de apagar o reestructurar el segmento existente.
+*   **Facilidad de Mantenimiento y Diagnóstico**: Esta topología centraliza las conexiones físicas en un único punto por departamento (el gabinete de pared). Esto agiliza la labor del personal de soporte, permitiendo identificar rápidamente problemas de capa 1 al revisar el estado del puerto específico en el switch o guiándose por las etiquetas (ej. `RRHH-PR01`).
+
+## 4. Tipo y Categoría de Cable por Segmento
+
+La selección de los medios de transmisión físicos se ha realizado tomando en cuenta las dimensiones del edificio de QuetzalDev S.A. (26 metros de largo y 18 de ancho en su totalidad) y las necesidades de ancho de banda de una empresa asi.
+
+| Segmento de Red | Tipo y Categoría de Cable | Justificación Técnica |
+| :--- | :--- | :--- |
+| **Cableado Troncal** (Backbone / Enlaces MDF a Switches de Depto.) | **Fibra Óptica Multimodo** | Según los principios de cableado estructurado, la fibra óptica es el medio más apropiado para el backbone debido a su alta capacidad y velocidad de uplink. Garantiza que el tráfico sumado de las 48 computadoras/servidores no genere un cuello de botella al comunicarse con el Data Center principal. |
+| **Cableado Horizontal** (Switches de Depto. a Dispositivos Finales) | **Cobre UTP - Categoría 6** | Las distancias desde los switches departamentales hasta las áreas de trabajo son considerablemente cortas (menores a 30 metros), cumpliendo holgadamente el estándar de 100 metros máximos. El cable UTP Cat 6 es ideal ya que soporta velocidades de 1 Gbps (1000BASE-T) a 250 MHz, ofreciendo el ancho de banda necesario para las tareas de desarrollo, QA y diseño de la empresa a un costo equilibrado. |

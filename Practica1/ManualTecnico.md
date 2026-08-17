@@ -167,3 +167,13 @@ Para el enrutamiento seguro, ordenado y escalable de los cables a través del ed
 *   **Selección:** Canaleta plástica cerrada de superficie (Ducto de pared).
 *   **Ruta:** Desde el gabinete de telecomunicaciones interno de cada departamento hacia las salidas de información (rosetas) agrupadas en los escritorios.
 *   **Justificación:** Dentro del área de trabajo de oficinas como Legal, Dirección General o Recursos Humanos, la estética y la protección física de los enlaces son prioridades. La canaleta cerrada resguarda los cables de cobre UTP Categoría 6 contra dobleces excesivos, tirones o impactos accidentales causados por el personal. Esto asegura que el tramo final del cableado mantenga su integridad hasta llegar a las tomas de red unitarias o dobles de cada usuario.
+
+## 9. Justificación del Tipo de Rack para el MDF
+
+Para el Cuarto de Telecomunicaciones Principal (MDF), alojado dentro del Data Center, se propone la utilización de un Rack de Piso (Gabinete Cerrado) de 42U estándar de 19 pulgadas. 
+
+Esta decisión se basa en base a los siguientes puntos clave:
+
+*   **Capacidad y Carga Estructural:** El MDF es el núcleo de la red. Un rack de piso ofrece el espacio vertical y la resistencia estructural necesarios para alojar de forma segura el Switch Principal, el Patch Panel central, la bandeja de fibra óptica y los 3 servidores principales asignados a esta área.
+*   **Soporte para Respaldo de Energía:** Los equipos de respaldo (UPS) con capacidad suficiente para sostener la infraestructura central (estimados entre 3000VA y 5000VA) son equipos de gran volumen y peso. Un gabinete de piso es indispensable para soportar esta carga de manera segura en su base inferior.
+*   **Seguridad Física y Organización:** Al tratarse de un gabinete cerrado, se añade una capa de seguridad física mediante cerraduras (control de acceso físico). Además, su altura permite una gestión óptima mediante ordenadores de cables verticales, manejando adecuadamente el volumen de enlaces troncales que convergen desde todo el edificio corporativo.

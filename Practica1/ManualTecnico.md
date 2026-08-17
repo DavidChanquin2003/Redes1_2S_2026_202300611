@@ -123,3 +123,22 @@ Con base en la normativa comercial y los requerimientos del proyecto, se utiliza
 *   Cálculo: 469.2 m / 305 m = 1.53 bobinas.
 
 **Conclusión de Material:** Se requiere presupuestar y adquirir 2 bobinas de cable UTP Categoría 6 (305 metros c/u) para satisfacer holgadamente la demanda de cableado horizontal del edificio.
+
+## 6. Justificación de Equipo Activo y Dimensionamiento
+
+Para el correcto flujo de los datos y el soporte de la topología en estrella diseñada, se propone la siguiente infraestructura de equipos activos y su correspondiente dimensionamiento de terminaciones pasivas (Patch Panels).
+
+### 6.1 Switch Principal (Cuarto de Telecomunicaciones / MDF)
+*   **Justificación:** Este dispositivo funciona como el núcleo  de toda la red del edificio de QuetzalDev S.A. Su función es concentrar el tráfico que proviene del cableado troncal de los 7 departamentos y proveerles acceso a los servicios centrales.
+*   **Dimensionamiento:** Actualmente, el switch principal debe conectar 7 enlaces troncales (uno por cada departamento) más los 3 servidores físicos alojados en el Data Center, requiriendo un mínimo de 10 puertos activos.
+*   **Selección:** Se propone un Switch de 24 puertos, emparejado con un Patch Panel principal de 24 puertos. Esto cumple estrictamente con el requerimiento técnico de que el switch debe tener una cantidad de puertos igual o mayor al patch panel, garantizando además un 140% de margen de escalabilidad para futuras conexiones troncales o servidores adicionales.
+
+### 6.2 Switches Departamentales de Acceso
+*   **Justificación:** Son los elementos activos encargados de distribuir la conexión hacia el cableado horizontal de cada área de trabajo. Implementar un switch por departamento aísla el tráfico local, optimiza el rendimiento y facilita la administración de los hosts.
+*   **Dimensionamiento y Selección:** El dimensionamiento se calculó sumando la cantidad de dispositivos finales (PCs, laptops y servidores) requeridos por área, añadiendo un margen para el crecimiento a corto plazo:
+    *   **Áreas de baja densidad (Recepción, Legal, Dirección General):** Requieren 4 puntos de red cada una. Se dimensionaron switches de 8 puertos con Patch Panels de 8 puertos.
+    *   **Áreas de alta densidad (Recursos Humanos, Capacitación, Diseño, Backend):** Requieren entre 7 y 10 puntos de red cada una. Se dimensionaron Switches de 16 puertos equiparejados con Patch Panels de 16 puertos. (En el caso de Capacitación, que ocupa 10 puertos, el switch de 16 puertos deja 6 disponibles para rápida expansión).
+
+### 6.3 Servidores
+*   **Justificación:** Actúan como los proveedores de recursos, aplicaciones y almacenamiento dentro de la red. 
+*   **Distribución:** Se alojan 3 servidores en el Data Center por seguridad y control climático. Los 3 servidores distribuidos (en Recepción, Diseño e Innovación, y Backend) se justifican operativamente para reducir la latencia en tareas específicas de esos equipos (por ejemplo, servidores locales para Laboratorios de Pruebas QA en Diseño, o control de repositorios en Backend).

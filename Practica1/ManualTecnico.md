@@ -45,7 +45,7 @@ Las salidas de información en las áreas de trabajo se han agrupado estratégic
 
 | Departamento | Tomas Unitarias | Tomas Dobles (2 puertos) | Tomas Cuádruples (4 puertos) |
 | :--- | :---: | :---: | :---: |
-| Recepción | 3 | 0 | 0 |
+| Recepción | 4 | 0 | 0 |
 | Recursos Humanos | 4 | 0 | 1 |
 | Legal | 4 | 0 | 0 |
 | Sala de Capacitación| 0 | 5 | 0 |
@@ -53,7 +53,7 @@ Las salidas de información en las áreas de trabajo se han agrupado estratégic
 | Dirección General | 4 | 0 | 0 |
 | Backend | 1 | 3 | 0 |
 | Data Center | 3 | 0 | 0 |
-| **Total** | **19** | **12** | **1** |
+| **Total** | **20** | **12** | **1** |
 
 ### 1.5 Respaldo de Energía (UPS)
 Para garantizar la continuidad operativa de los equipos de telecomunicaciones.

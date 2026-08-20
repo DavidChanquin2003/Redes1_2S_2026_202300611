@@ -317,3 +317,12 @@ El siguiente presupuesto detalla la estimación de costos para la implementació
 | | **TOTAL ESTIMADO (Materiales y Equipo)** | | | **Q 43,385.00** |
 
 Nota: Este presupuesto contempla únicamente el hardware (materiales y equipo de red). No incluye los dispositivos finales (PCs, Laptops, Servidores) ni los costos de mano de obra por instalación, configuración o certificación de los nodos de red.
+
+### 16.2 Referencias de Cotización de Materiales
+Basandome en lo que dijo el aux, los componentes seleccionados y los precios estimados en este presupuesto (expresados en Quetzales) fueron cotizados tomando como referencia distribuidores de tecnología y catálogos en línea de marcas reconocidas, no limitándose únicamente al material de apoyo base. 
+
+A continuación, se adjuntan enlaces de referencia de los fabricantes y distribuidores consultados para justificar las características y precios de mercado:
+
+*   **Equipo Activo (Switches Cisco/TP-Link Empresarial):** Referencias tomadas de catálogos en línea internacionales (ej. Amazon Business) y distribuidores regionales para switches no administrables/Smart Gigabit. [https://www.amazon.com/switches-red/](https://www.amazon.com)
+*   **Equipo Pasivo y Cableado (Nexxt / Panduit):** Precios de bobinas UTP Cat6, patch panels y gabinetes basados en tiendas de tecnología e infraestructura en Guatemala. [https://www.intelaf.com/](https://www.intelaf.com/) / [https://www.kemik.gt/](https://www.kemik.gt/)
+*   **Respaldo de Energía (UPS APC/Forza):** Referencias de mercado local para equipos rackeables de 1000VA a 3000VA. [https://www.macrocitygt.com/](https://www.macrocitygt.com/)

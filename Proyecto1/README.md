@@ -268,3 +268,26 @@ Se seleccionó y forzó al Multilayer Switch0 (Centro de Datos) para que actúe 
 De acuerdo con las reglas del proyecto, se implementó la agregación de enlaces utilizando el protocolo de Cisco **PAgP**, condición obligatoria dado que el último dígito de mi carné (202300611) es impar.
 
 Este canal (Port-channel 1) se implementó estratégicamente en la conexión troncal entre el **Centro de Datos (Core)** y el Centro de Investigación y Desarrollo (I+D). La decisión responde directamente a la necesidad del enunciado, el cual establece que el I+D debe soportar una mayor demanda de ancho de banda y garantizar alta disponibilidad ante fallas. Al agrupar múltiples interfaces físicas en una sola interfaz lógica, logramos sumar la capacidad de transmisión (duplicando el ancho de banda) y proveemos redundancia inmediata en Capa 2: si un cable físico sufre un corte, el tráfico de I+D conmutará automáticamente al enlace restante sin experimentar caídas de servicio.
+
+
+## 8. Evidencia de Pruebas y Diagnóstico
+
+Para cumplir con los requisitos de validación y auditoría del proyecto, se presentan las capturas de los diagnósticos ejecutados en la interfaz de línea de comandos (CLI) que demuestran la correcta operatividad de los protocolos de Capa 2. Las pruebas se realizaron principalmente desde el equipo Core.
+
+### 8.1 Verificación de Prevención de Bucles
+El siguiente comando demuestra que el protocolo Rapid-PVST está activo y que el Centro de Datos actúa como la raíz de la topología lógica.
+
+**Comando ejecutado:** `show spanning-tree`
+![Evidencia STP](img/spanning_tree.png)
+
+### 8.2 Verificación de Agregación de Enlaces
+El siguiente comando comprueba que el canal lógico de alta velocidad hacia el Centro de I+D está negociado, operativo (Status: SU) y utilizando el protocolo exigido.
+
+**Comando ejecutado:** `show etherchannel summary`
+![Evidencia EtherChannel](img/etherchannel.png)
+
+### 8.3 Verificación de Enlaces Troncales y Seguridad
+El siguiente diagnóstico audita los enlaces troncales activos, verificando que permiten el paso del tráfico segmentado y que la VLAN nativa ha sido modificada por seguridad.
+
+**Comando ejecutado:** `show interfaces trunk`
+![Evidencia Trunking](img/trunk.png)

@@ -291,3 +291,47 @@ El siguiente diagnóstico audita los enlaces troncales activos, verificando que 
 
 **Comando ejecutado:** `show interfaces trunk`
 ![Evidencia Trunking](img/trunk.png)
+
+## 9. Medios de Transmisión
+
+Para la interconexión física del complejo tecnológico "SmartCity Tech Park", se seleccionaron los medios de transmisión basados en los requerimientos de ancho de banda, distancia y mitigación de interferencias de cada segmento.
+
+| Segmento de Red | Medio Seleccionado | Uso Principal |
+| :--- | :--- | :--- |
+| **Backbone (Core a Edificios)** | Fibra Óptica (Multimodo) | Enlaces troncales inter-edificios y EtherChannel. |
+| **Acceso (Switches a PCs/APs)** | Cobre UTP (Categoría 6) | Conexión de equipos finales y servidores en racks contiguos. |
+| **Planta de Producción** | Cobre STP (Apantallado) | Conexión del segmento Legacy industrial. |
+
+### 9.1 Justificación Técnica de la Selección
+
+1. **Fibra Óptica para el Backbone:**
+   Las conexiones entre el Centro de Datos y los edificios corporativos (I+D, Corporativo y Producción) superan las distancias recomendadas para el cableado de cobre (100 metros máximos). Por ello, se justificó el uso de Fibra Óptica Multimodo. Este medio no solo soporta distancias mayores sin atenuación, sino que garantiza el alto ancho de banda requerido por los enlaces agregados (EtherChannel hacia I+D) y es completamente inmune a la interferencia electromagnética que podría generarse al pasar cerca del entorno industrial.
+
+2. **Cobre UTP/STP para la Capa de Acceso:**
+   Para las conexiones internas (dentro del mismo cuarto o piso) entre los switches de acceso y los dispositivos finales (Laptops, PCs, Servidores y el Access Point), se utilizó cableado de par trenzado de cobre (UTP Cat6) debido a su excelente relación costo-beneficio para distancias cortas y su facilidad de instalación. Como excepción técnica, para el segmento Legacy de la Planta de Producción, se recomienda cableado de cobre apantallado (STP) para proteger los datos de la maquinaria industrial contra el ruido electromagnético.
+
+## 10. Presupuesto Estimado de Implementación
+
+A continuación, se detalla el presupuesto estimado para la implementación física de la topología diseñada, considerando equipos de conmutación empresarial, módulos transceptores y cableado estructurado. 
+
+*Nota: Los precios son estimaciones de mercado en Quetzales para equipos nuevos o refaccionados con garantía empresarial en Guatemala. No se cotiza el Hub de Producción ni la maquinaria industrial por considerarse equipamiento heredado (Legacy) preexistente. Segun lo que se menciona en el pdf*
+
+| Ítem | Descripción Técnica | Cantidad | Precio Unitario Estimado | Total Estimado |
+| :--- | :--- | :---: | :---: | :---: |
+| **Switch Core** | Cisco Catalyst 3560/3850 (Multilayer, 24-Port, PoE+) | 1 | Q 9,360.00 | Q 9,360.00 |
+| **Switch Acceso** | Cisco Catalyst 2960-X (L2, 24-Port, Gigabit) | 6 | Q 3,510.00 | Q 21,060.00 |
+| **Módulos SFP** | Transceptor Cisco GLC-SX-MMD (1000BASE-SX, Multimodo) | 10 | Q 273.00 | Q 2,730.00 |
+| **Access Point** | Cisco Aironet 1850 Series (802.11ac) | 1 | Q 1,950.00 | Q 1,950.00 |
+| **Bobina UTP** | Cable UTP Categoría 6, Cobre Puro (Caja 305m) | 3 | Q 936.00 | Q 2,808.00 |
+| **Bobina STP** | Cable STP Categoría 6 Apantallado (Caja 305m) | 1 | Q 1,404.00 | Q 1,404.00 |
+| **Fibra Óptica** | Cable Fibra Óptica Multimodo OM3 (Rollo 500m) | 1 | Q 2,340.00 | Q 2,340.00 |
+| **Patch Cords** | Cables de parcheo UTP Cat6 y Jumpers LC-LC de Fibra | 1 | Q 1,170.00 (Lote) | Q 1,170.00 |
+| **Total General** | **Inversión Estimada en Hardware de Red** | | | **Q 42,822.00** |
+
+### 10.1 Referencias para Cotización
+
+Para fines académicos y de auditoría técnica, los precios unitarios presentados en el presupuesto fueron consultados y promediados utilizando los catálogos públicos de los siguientes proveedores internacionales de infraestructura IT:
+
+*   **Switches Cisco Catalyst y Access Points:** Precios de referencia consultados en distribuidores de equipo empresarial y reacondicionado (Refurbished) con garantía, como [Router-Switch.com (Catálogo Cisco)](https://www.router-switch.com/cisco-equipment.html) y [Amazon Business (Networking)](https://www.amazon.com/).
+*   **Módulos Transceptores (SFP) y Fibra Óptica:** Cotizados a través de [FS.com](https://www.fs.com/es/), proveedor global líder en óptica para centros de datos y transceptores compatibles con Cisco.
+*   **Cableado Estructurado de Cobre (Bobinas UTP/STP):** Estimaciones basadas en precios de mercado de fabricantes certificados (ej. Panduit, Tripp Lite, Belden) disponibles en distribuidores de tecnología mayoristas.
